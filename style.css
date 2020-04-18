@@ -25,7 +25,7 @@ img {
 
 header {
     width: 100vw;
-    height: 80px;
+    height: 60px;
     display: grid;
     padding: 0 40px;
     grid-template-columns: 1fr 2fr;
@@ -41,7 +41,7 @@ header {
 }
 
 .logo .kuaner-logo img {
-    float: left;
+float: left;
     width: 30px;
     height: 30px;
     background-color: var(--primary-color);
@@ -64,6 +64,28 @@ header nav a {
 
 header .burger {
     display: none;
+}
+
+header.sticky {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);
+    animation: dropDown 0.618s ease-in-out forwards;
+}
+
+header.sticky .logo,
+header.sticky nav a,
+header.sticky nav i {
+    color: var(--text-color-darker);
+}
+
+@keyframes dropDown {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .glide {
@@ -414,7 +436,7 @@ section {
 .data-section {
     max-width: unset;
     width: 100vw;
-    height: 225px;
+    height: 325px;
     background-image: url("images/adult-business-computer-contemporary-380769.jpg");
     background-size: cover;
     background-position: center;
@@ -601,14 +623,17 @@ footer {
 
 .icp-info,
 .rights {
-    grid-column-start:1 ;
-    grid-column-end:-1 ;
-
-    /* grid-column: 1 / -1; */
+    grid-column: 1 / -1;
     justify-self: center;
     color: var(--text-color-light-gray);
 }
 
+.scrollToTop {
+    display: none;
+    position: relative;
+    z-index: 300;
+    transition: 0.5s ease-in-out;
+}
 .scrollToTop a {
     width: 32px;
     height: 32px;
